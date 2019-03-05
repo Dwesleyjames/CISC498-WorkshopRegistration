@@ -22,41 +22,43 @@
         <!--<link href="<%=request.getContextPath()%>/css/bursaryapp.css" rel="stylesheet">-->
     </head>
     <body>
-        <div class="banner-row">
+        <div class="jumbotron text-center banner-row">
             <h1>Details Page</h1>
         </div>
         <div class="container"> 
-            <div>
-                Workshop Name
+            <div class="text-center">
+                <h3> Workshop Name </h3>
+                <p width="1"> Description........... Description........... Description........... Description........... Description...........</p>
             </div>
-            <div>
-                Location
+            <div class="row">
+                <div class="col-sm-4">
+                    <h4> Location: </h4>
+                    <h4> </h4>
+                </div>
+                <div class="col-sm-4">
+                    <h4> Time & Date: </h4>
+                    <h4> </h4>
+                </div>
+                <div class="col-sm-4">
+                    <h4> Facilitator: </h4>
+                    <h4> </h4>
+                </div>
+                <div class="col-sm-4">
+                    <h4> Status (Will be hidden depending on user class): </h4>
+                    <h4> </h4>
+                </div>
             </div>
+
             <div>
-                Time & Date
-            </div>
-            <div>
-                Location
-            </div>
-            <div>
-                Location
-            </div>
-            <div>
-                Location
-            </div>
-            <div>
-                Location
-            </div>
-            <div>
-                <button> Register
+                <button type="button" class="btn btn-primary"> Register
                 </button>
-                <button>
+                <button type="button" class="btn btn-primary">
                     <s:url action="functionLoadAction" var="functionUrl" />
-                    <a href='<s:property value="functionUrl"/>'>Edit Workshop (Will be hidden depending on user class)</a>
+                    <a href='<s:property value="functionUrl"/>' style="color:white">Edit Workshop (Will be hidden depending on user class)</a>
                 </button>
-                <button>
+                <button type="button" class="btn btn-primary">
                     <s:url action="attendanceLoadAction" var="attendanceUrl" />
-                    <a href='<s:property value="attendanceUrl"/>'>Access Attendance (Will be hidden depending on user class)</a>
+                    <a href='<s:property value="attendanceUrl"/>' style="color:white">Access Attendance (Will be hidden depending on user class)</a>
                 </button>
             </div>
         </div>

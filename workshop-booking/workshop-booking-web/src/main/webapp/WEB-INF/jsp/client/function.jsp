@@ -21,7 +21,7 @@
         <!--<link href="<%=request.getContextPath()%>/css/bursaryapp.css" rel="stylesheet">-->
     </head>
     <body>
-        <div class="banner-row">
+        <div class="jumbotron text-center banner-row">
             <h1>Workshop Functions</h1>
         </div>
         <h1>Need to add workshop functions functionality here</h1>

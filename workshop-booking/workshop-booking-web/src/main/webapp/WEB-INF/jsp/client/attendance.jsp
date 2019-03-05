@@ -22,7 +22,7 @@
         
     </head>
     <body>
-        <div class="banner-row">
+        <div class="jumbotron text-center banner-row">
             <h1>Workshop Attendance</h1>
         </div>
         <h1>Need to add workshop attendance functionality here</h1>
