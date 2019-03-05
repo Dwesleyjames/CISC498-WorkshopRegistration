@@ -1,0 +1,18 @@
+.actionMessage {
+    list-style: none;
+    color: #419641;
+    border: thin green solid;
+}
+
+.errorMessage {
+    list-style: none;
+    color: red;
+    border: thin red solid;
+}
+
+.banner-row {
+    background-image: url("../images/banner_blue_purple.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:white;
+}
