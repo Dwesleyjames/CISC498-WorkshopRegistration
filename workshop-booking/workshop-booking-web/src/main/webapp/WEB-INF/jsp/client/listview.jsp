@@ -22,9 +22,40 @@
 
     </head>
     <body>
-        <div class="jumbotron text-center banner-row">
+        <div class="jumbotron text-center banner-row mb-0">
             <h1>Workshop List View</h1>
         </div>
+        
+        <!-- INCLUDED IN EVERY .JSP FILE -->
+        <div class="container-fluid">
+            <div class="row" style="background-color:#6699ff">
+                <div class="col-sm-10"></div>
+                <div class="col-sm-1">
+                    <div class="active-cyan-3 active-cyan-4 mb-4">
+                        <input class="form-control" type="text" placeholder="Search" aria-label="Search"> <!-- This is causing awkward spacing below, this needs to be fixed -->
+                    </div>
+                </div>
+                <div class="col-sm-1">
+                    
+                    <div class="dropwdown text-right">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">. . .
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu dropdown-menu-right text-right">
+                            <li><s:url action="dashboardAction" var="dashboardUrl" />
+                                <a href='<s:property value="dashboardUrl"/>'>Workshop Calendar</a>
+                            </li>
+                            <li>
+                                <s:url action="listViewLoadAction" var="listViewUrl" />
+                                <a href='<s:property value="listViewUrl"/>'>My Workshops</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="#">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+                            
         <h1>Need to add workshop list view functionality here.</h1>
         
         <h3>Login/Logout</h3>

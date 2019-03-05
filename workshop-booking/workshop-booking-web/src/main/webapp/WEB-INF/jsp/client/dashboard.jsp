@@ -21,20 +21,46 @@
         <link href="<%=request.getContextPath()%>/css/styles.css" rel="stylesheet">
     </head>
     <body>
-        <div class="container">
-            <div class="container banner-row">
-                <div class="col-12 text-center">
-                    <h1>Dashboard</h1>
+        <div class="jumbotron text-center banner-row mb-0">
+            <h1>Workshop Calendar</h1>
+        </div>
+
+        <!-- INCLUDED IN EVERY .JSP FILE -->
+        <div class="container-fluid">
+            <div class="row" style="background-color:#6699ff">
+                <div class="col-sm-10"></div>
+                <div class="col-sm-1">
+                    <div class="active-cyan-3 active-cyan-4 mb-4">
+                        <input class="form-control" type="text" placeholder="Search" aria-label="Search"> <!-- This is causing awkward spacing below, this needs to be fixed -->
+                    </div>
+                </div>
+                <div class="col-sm-1">
+                    
+                    <div class="dropwdown text-right">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">. . .
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu dropdown-menu-right text-right">
+                            <li>
+                                <s:url action="listViewLoadAction" var="listViewUrl" />
+                                <a href='<s:property value="listViewUrl"/>'>My Workshops</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="#">Logout</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+        </div>
+        
+        <div class="container">
             <div class="row">
                 <div class="col-12">
                     <s:url action="studentHomeLoadAction" var="studentHomeUrl" />
-                    <a href='<s:property value="studentHomeUrl"/>'>Go To Student Home Page </a>
+                    <a href='<s:property value="studentHomeUrl"/>'>Go To Student Home Page ========= This is just a few examples from Glenn</a>
                 </div>
             </div>
                 
-                <h5> This will be the login page / redirect to the login page. Once logged in the will go to the list view page</h5>
+                <h5> This will be the login page / redirect to and from the login page.</h5>
                 
                 <div>
                     <s:url action="listViewLoadAction" var="listViewUrl" />
