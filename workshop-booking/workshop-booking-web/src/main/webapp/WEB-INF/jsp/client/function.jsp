@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Function</title>
         
         <!-- Bootstrap core CSS -->
         <link href="<%=request.getContextPath()%>/css/bootstrap.min.css" rel="stylesheet">
@@ -55,10 +55,34 @@
         </div>
                             
         <h1>Need to add workshop functions functionality here</h1>
-        
-        <div>
-            <s:url action="dashboardAction" var="dashboardUrl" />
-            <a href='<s:property value="dashboardUrl"/>'>Go Back </a>
+        <div class="basic-func">
+            <fieldset>
+                <legend>
+                    Status:
+                </legend>
+                <s:radio name="workshopForm.status" list="statusList" />
+            </fieldset>
+            
+            <label>
+                Event Title:
+                <s:textfield name="workshopForm.eventTitle"/>
+            </label>
+            <label>
+                Location:
+                <s:textfield name="workshopForm.location"/>
+            </label>
+            <label>
+                Teaser:
+                <s:textfield name="workshopForm.teaser"/>
+            </label>
+            <label>
+                Maximum Participants:
+                <s:textfield name="workshopForm.maxParticipant"/>
+            </label>
+            <label>
+                Wait List Limit:
+                <s:textfield name="workshopForm.waitlistLimit"/>
+            </label>
         </div>
         
         <!-- JS -->

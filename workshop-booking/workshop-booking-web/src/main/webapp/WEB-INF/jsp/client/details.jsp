@@ -48,6 +48,10 @@
                                 <s:url action="listViewLoadAction" var="listViewUrl" />
                                 <a href='<s:property value="listViewUrl"/>'>My Workshops</a>
                             </li>
+                            <li>
+                                <s:url action="functionLoadAction" var="functionUrl" />
+                                <a href='<s:property value="functionUrl"/>'>Edit Workshop</a>
+                            </li>
                             <li class="divider"></li>
                             <li><a href="#">Logout</a></li>
                         </ul>
@@ -81,7 +85,8 @@
             </div>
 
             <div>
-                <button type="button" class="btn btn-primary"> Register
+                <button type="button" class="btn btn-primary"> 
+                    Register
                 </button>
                 <button type="button" class="btn btn-primary">
                     <s:url action="functionLoadAction" var="functionUrl" />
