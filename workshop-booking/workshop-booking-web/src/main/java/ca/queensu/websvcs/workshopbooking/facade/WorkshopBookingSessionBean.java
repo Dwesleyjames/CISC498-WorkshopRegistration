@@ -111,5 +111,13 @@ public class WorkshopBookingSessionBean implements WorkshopBookingSessionBeanLoc
             throw  new EJBException(e);
         }
     }
-
+    
+    @Override
+    public List<String> findstatusList(){
+        List<String> statusList = new ArrayList<>();
+        statusList.add("Not Posted");
+        statusList.add("Posted");
+        statusList.add("Archived");
+        return statusList;
+    }
 }

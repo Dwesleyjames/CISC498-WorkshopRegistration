@@ -35,12 +35,50 @@ public class FunctionAction extends ActionSupport {
     
     // This list populates the radio buttons for workshop status
     List<String> statusList;
+
+    public WorkshopBookingSessionBeanLocal getEjb() {
+        return ejb;
+    }
+
+    public void setEjb(WorkshopBookingSessionBeanLocal ejb) {
+        this.ejb = ejb;
+    }
+
+    public WorkshopInfoForm getWorkshopForm() {
+        return workshopForm;
+    }
+
+    public void setWorkshopForm(WorkshopInfoForm workshopForm) {
+        this.workshopForm = workshopForm;
+    }
+
+    public List<String> getStatusList() {
+        return statusList;
+    }
+
+    public void setStatusList(List<String> statusList) {
+        this.statusList = statusList;
+    }
     
     public FunctionAction() {
         System.out.println("### FunctionAction constructor running");
     }
     
-/*
+
+    public void prepare() throws Exception {
+        try {
+            System.out.println("### StudentEditAction prepare running");
+            statusList = ejb.findstatusList();
+        } 
+        catch (Exception e) {
+            StringWriter out = new StringWriter();
+            e.printStackTrace(new PrintWriter(out));
+            addActionError(createErrorMessage("Exception occurred while preparing data for edit screen."));
+            log.error("***************Exception occurred in prepare method " + e.getMessage());
+            log.error(out);
+        }
+    }
+    
     @SkipValidation
     public String load() throws Exception{
         try {
@@ -57,7 +95,7 @@ public class FunctionAction extends ActionSupport {
         
         return SUCCESS;
     }
-    */
+    
     @Override
     public String execute() throws Exception {
         try {

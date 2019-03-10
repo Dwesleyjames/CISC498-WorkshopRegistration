@@ -13,4 +13,6 @@ public interface WorkshopBookingSessionBeanLocal {
     public List<String> findCountries();
     public List<String> findHairColours();
     public boolean updateStudent(StudentDataBean studentBean);
+    
+    public List<String> findstatusList();
 }

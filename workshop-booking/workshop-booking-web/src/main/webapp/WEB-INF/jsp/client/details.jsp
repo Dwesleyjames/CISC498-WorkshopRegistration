@@ -74,19 +74,19 @@
                 </div>
             </div>
 
-            <div>
-                <button type="button" class="btn btn-primary"> 
+            <ul>
+                <li type="button" class="btn btn-primary"> 
                     Register
-                </button>
-                <button type="button" class="btn btn-primary">
+                </li>
+                <li type="button" class="btn btn-primary">
                     <s:url action="functionLoadAction" var="functionUrl" />
                     <a href='<s:property value="functionUrl"/>' style="color:white">Edit Workshop (Will be hidden depending on user class)</a>
-                </button>
-                <button type="button" class="btn btn-primary">
+                </li>
+                <li type="button" class="btn btn-primary">
                     <s:url action="attendanceLoadAction" var="attendanceUrl" />
                     <a href='<s:property value="attendanceUrl"/>' style="color:white">Access Attendance (Will be hidden depending on user class)</a>
-                </button>
-            </div>
+                </li>
+            </ul>
         </div>
 
         <!-- JS -->
