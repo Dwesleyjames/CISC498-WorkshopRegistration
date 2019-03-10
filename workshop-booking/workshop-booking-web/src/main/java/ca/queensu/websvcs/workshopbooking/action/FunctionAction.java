@@ -10,6 +10,7 @@ import ca.queensu.websvcs.workshopbooking.facade.WorkshopBookingSessionBeanLocal
 import static com.opensymphony.xwork2.Action.ERROR;
 import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.Preparable;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.Date;
@@ -23,7 +24,7 @@ import org.apache.struts2.interceptor.validation.SkipValidation;
  *
  * @author dwesl
  */
-public class FunctionAction extends ActionSupport {
+public class FunctionAction extends ActionSupport implements Preparable{
 
     private static final long serialVersionUID = 1L;
     private final Logger log = LogManager.getLogger(ca.queensu.websvcs.workshopbooking.action.DashboardAction.class);
@@ -36,35 +37,7 @@ public class FunctionAction extends ActionSupport {
     // This list populates the radio buttons for workshop status
     List<String> statusList;
 
-    public WorkshopBookingSessionBeanLocal getEjb() {
-        return ejb;
-    }
-
-    public void setEjb(WorkshopBookingSessionBeanLocal ejb) {
-        this.ejb = ejb;
-    }
-
-    public WorkshopInfoForm getWorkshopForm() {
-        return workshopForm;
-    }
-
-    public void setWorkshopForm(WorkshopInfoForm workshopForm) {
-        this.workshopForm = workshopForm;
-    }
-
-    public List<String> getStatusList() {
-        return statusList;
-    }
-
-    public void setStatusList(List<String> statusList) {
-        this.statusList = statusList;
-    }
-    
-    public FunctionAction() {
-        System.out.println("### FunctionAction constructor running");
-    }
-    
-
+    @Override
     public void prepare() throws Exception {
         try {
             System.out.println("### StudentEditAction prepare running");
@@ -83,6 +56,8 @@ public class FunctionAction extends ActionSupport {
     public String load() throws Exception{
         try {
             System.out.println("### FunctionAction load running");
+//            System.out.println("### StudentEditAction prepare running");
+//            statusList = ejb.findstatusList();
         } 
         catch (Exception e) {
             StringWriter out = new StringWriter();
@@ -126,13 +101,35 @@ public class FunctionAction extends ActionSupport {
         return customMessage + msgAppend;
     }
     
-    public List<String> getstatusList(){
+
+    public WorkshopBookingSessionBeanLocal getEjb() {
+        return ejb;
+    }
+
+    public void setEjb(WorkshopBookingSessionBeanLocal ejb) {
+        this.ejb = ejb;
+    }
+
+    public WorkshopInfoForm getWorkshopForm() {
+        return workshopForm;
+    }
+
+    public void setWorkshopForm(WorkshopInfoForm workshopForm) {
+        this.workshopForm = workshopForm;
+    }
+
+    public List<String> getStatusList() {
         return statusList;
     }
-    
-    public void setstatusList(List<String> statusList){
+
+    public void setStatusList(List<String> statusList) {
         this.statusList = statusList;
     }
     
+    public FunctionAction() {
+        System.out.println("### FunctionAction constructor running");
+    }
+    
+
     
 }

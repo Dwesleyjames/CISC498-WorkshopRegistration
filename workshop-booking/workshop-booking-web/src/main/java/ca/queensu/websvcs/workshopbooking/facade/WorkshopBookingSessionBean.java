@@ -114,6 +114,7 @@ public class WorkshopBookingSessionBean implements WorkshopBookingSessionBeanLoc
     
     @Override
     public List<String> findstatusList(){
+//      List of possible status for workshops
         List<String> statusList = new ArrayList<>();
         statusList.add("Not Posted");
         statusList.add("Posted");

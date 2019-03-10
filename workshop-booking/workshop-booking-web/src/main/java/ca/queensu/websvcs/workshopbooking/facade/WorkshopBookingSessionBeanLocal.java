@@ -14,5 +14,6 @@ public interface WorkshopBookingSessionBeanLocal {
     public List<String> findHairColours();
     public boolean updateStudent(StudentDataBean studentBean);
     
+    // function.jsp
     public List<String> findstatusList();
 }
