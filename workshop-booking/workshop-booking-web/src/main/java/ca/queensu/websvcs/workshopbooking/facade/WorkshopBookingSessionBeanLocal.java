@@ -16,4 +16,5 @@ public interface WorkshopBookingSessionBeanLocal {
     
     // function.jsp
     public List<String> findstatusList();
+    public List<String> findlocationList();
 }

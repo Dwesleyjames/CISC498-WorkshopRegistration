@@ -1,20 +1,17 @@
 <%-- 
-    Document   : function
-    Created on : 1-Mar-2019, 7:59:08 PM
-    Author     : dwesl
+    Document   : emailedit
+    Created on : 10-Mar-2019, 4:31:05 PM
+    Author     : sylvi
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
-<!--Todo: test-->
-
-
+ 
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Function</title>
+        <title>Email Edit</title>
         
         <!-- Bootstrap core CSS -->
         <link href="<%=request.getContextPath()%>/css/bootstrap.min.css" rel="stylesheet">
@@ -25,7 +22,7 @@
     </head>
     <body>
         <div class="jumbotron text-center banner-row mb-0">
-            <h1>Workshop Functions</h1>
+            <h1>Email Edit</h1>
         </div>
         
         <!-- Navigation Bar - INCLUDED IN EVERY .JSP FILE -->
@@ -52,63 +49,9 @@
                 </ul>              
         </nav>
         
-        <div class="func-navbar">
-            <ul>
-                <li class="func-nav-item">
-                    <s:url action="functionLoadAction" var="functionUrl" />
-                    <a href='<s:property value="functionUrl"/>'>Event Setup</a>
-                </li>
-                <li class="func-nav-item">
-                    <s:url action="emaileditLoadAction" var="emaileditUrl" />
-                    <a href='<s:property value="emaileditUrl"/>'>Message Center</a>
-                </li>
-                <li class="func-nav-item">
-                    <s:url action="attendanceLoadAction" var="attendanceUrl" />
-                    <a href='<s:property value="attendanceUrl"/>'>Attendance</a>
-                </li>
-            </ul>
-        </div>
         
-
-        <s:form id="workshopEditForm" action="functionLoadAction" 
-                theme="bootstrap" method="post" cssClass="form-vertical">
-
-            <s:radio 
-                label="Status:"
-                name="workshopForm.status" 
-                list="statusList" />
-
-            <s:textfield 
-                label="Event Title:"
-                placeholder="Event Title"
-                name="workshopForm.eventTitle"
-                tooltip="Enter Workshop Title Here"/>
-            
-            <s:select 
-                label="Location"
-                name="workshopForm.location" 
-                list="locationList"/>
-
-            <s:textarea 
-                label="Teaser:"
-                name="workshopForm.teaser"/>
-            
-            <s:textfield 
-                label="Maximum Participants:"
-                name="workshopForm.maxParticipant"/>
-
-            <s:textfield 
-                label="Wait List Limit:"
-                name="workshopForm.waitlistLimit"/>
-
-            <!--Todo: Working on datetimepicker-->
-
-
-            <s:submit cssClass="btn btn-primary"/>
-        </s:form>
-            
-            
-            
+        <h1>#Need Modified# Email Edit Page</h1>
+        
         <!-- JS -->
         <script src="js/tether.min.js"></script>
         <script src="js/jquery-3.2.1.min.js"></script>

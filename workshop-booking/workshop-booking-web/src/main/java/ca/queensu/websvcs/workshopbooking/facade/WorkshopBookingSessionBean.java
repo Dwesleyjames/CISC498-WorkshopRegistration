@@ -121,4 +121,14 @@ public class WorkshopBookingSessionBean implements WorkshopBookingSessionBeanLoc
         statusList.add("Archived");
         return statusList;
     }
+    
+    @Override
+    public List<String> findlocationList(){
+//      List of all possible locations to hold a workshop
+        List<String> locationList = new ArrayList<>();
+        locationList.add("Dunning Hall");
+        locationList.add("WalterLight Hall");
+        locationList.add("Stauffer Lib");
+        return locationList;
+    }
 }

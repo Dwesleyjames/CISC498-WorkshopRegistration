@@ -103,7 +103,8 @@
             <result name="success">WEB-INF/jsp/client/listview.jsp</result>
         </action>
         
-        <action name="functionLoadAction" class="ca.queensu.websvcs.workshopbooking.action.FunctionAction" method="execute">
+        <!--Function Page-->
+        <action name="functionLoadAction" class="ca.queensu.websvcs.workshopbooking.action.FunctionAction" method="load">
             <interceptor-ref name="baseStack"></interceptor-ref>
             <result name="success">WEB-INF/jsp/client/function.jsp</result>
         </action>
@@ -116,6 +117,12 @@
         <action name="detailsLoadAction" class="ca.queensu.websvcs.workshopbooking.action.DetailsAction" method="execute">
             <interceptor-ref name="baseStack"></interceptor-ref>
             <result name="success">WEB-INF/jsp/client/details.jsp</result>
+        </action>
+        
+        <!-- Email Edit Page-->
+        <action name="emaileditLoadAction" class="ca.queensu.websvcs.workshopbooking.action.EmailEditAction" method="execute">
+            <interceptor-ref name="baseStack"></interceptor-ref>
+            <result name="success">WEB-INF/jsp/client/emailedit.jsp</result>
         </action>
     </package>
 </struts>

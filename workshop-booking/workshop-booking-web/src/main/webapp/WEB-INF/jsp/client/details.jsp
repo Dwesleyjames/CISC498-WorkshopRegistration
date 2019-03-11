@@ -86,6 +86,10 @@
                     <s:url action="attendanceLoadAction" var="attendanceUrl" />
                     <a href='<s:property value="attendanceUrl"/>' style="color:white">Access Attendance (Will be hidden depending on user class)</a>
                 </li>
+                <li type="button" class="btn btn-primary">
+                    <s:url action="emaileditLoadAction" var="emaileditUrl" />
+                    <a href='<s:property value="emaileditUrl"/>' style="color:white">Edit Email (Will be hidden depending on user class)</a>
+                </li>
             </ul>
         </div>
 

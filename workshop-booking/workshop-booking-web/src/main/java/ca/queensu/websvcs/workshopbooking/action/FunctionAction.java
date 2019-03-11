@@ -36,12 +36,15 @@ public class FunctionAction extends ActionSupport implements Preparable{
     
     // This list populates the radio buttons for workshop status
     List<String> statusList;
+    List<String> locationList;
+
 
     @Override
     public void prepare() throws Exception {
         try {
             System.out.println("### StudentEditAction prepare running");
             statusList = ejb.findstatusList();
+            locationList = ejb.findlocationList();
         } 
         catch (Exception e) {
             StringWriter out = new StringWriter();
@@ -130,6 +133,12 @@ public class FunctionAction extends ActionSupport implements Preparable{
         System.out.println("### FunctionAction constructor running");
     }
     
+    public List<String> getLocationList() {
+        return locationList;
+    }
 
+    public void setLocationList(List<String> locationList) {
+        this.locationList = locationList;
+    }
     
 }
