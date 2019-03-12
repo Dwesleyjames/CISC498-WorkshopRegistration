@@ -2,6 +2,7 @@
     Document   : emailedit
     Created on : 10-Mar-2019, 4:31:05 PM
     Author     : sylvi
+    Message Center Page
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -50,7 +51,79 @@
         </nav>
         
         
-        <h1>#Need Modified# Email Edit Page</h1>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-header">
+                    Workshop Edit
+                </div>
+                <div class="card-body">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <s:url action="functionLoadAction" var="functionUrl" />
+                            <a href='<s:property value="functionUrl"/>'>Event Setup</a>
+                        </li>
+                        <li class="nav-item">
+                            <s:url action="facilitatorLoadAction" var="facilitatorUrl" />
+                            <a href='<s:property value="facilitatorUrl"/>'>Facilitators</a>
+                        </li> 
+                        <li class="nav-item">
+                            <s:url action="emaileditLoadAction" var="emaileditUrl" />
+                            <a href='<s:property value="emaileditUrl"/>'>Message Center</a>
+                        </li>
+                        <li class="nav-item">
+                            <s:url action="attendanceLoadAction" var="attendanceUrl" />
+                            <a href='<s:property value="attendanceUrl"/>'>Attendance</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+                        
+        <div class="col-md-9">
+            <s:form id="RegEmailForm" action="emailEditLoadAction" 
+                    theme="bootstrap" method="post" cssClass="form-vertical">
+                
+                <h2>Registrant Notification Messages</h2>
+                <s:textfield 
+                    label="Notification Email From Name:"
+                    name="EmailInfoForm.notifyFromName"/>
+
+                <s:textarea 
+                    label="Confirmation Message"
+                    name="EmailInfoForm.confirmMsg"
+                    emptyOption="true"/>
+
+                <s:textarea 
+                    label="Wait List Message"
+                    name="EmailInfoForm.waitListMsg"
+                    emptyOption="true"/>
+                
+                <s:textarea 
+                    label="Cancellation Message"
+                    name="EmailInfoForm.cancelMsg"
+                    emptyOption="true"/>
+                
+                <s:textarea 
+                    label="Evaluation Message"
+                    name="EmailInfoForm.evalMsg"
+                    emptyOption="true"/>
+                
+                <h2>Internal Notification Options</h2>
+                <s:checkboxlist 
+                    label="Notify:" 
+                    name="EmailInfoForm.notifyGroup"
+                    list="{'Event Host','Assigned Facilitators'}"/>
+                
+                <s:checkboxlist 
+                    label="Receive Notifications For:" 
+                    name="EmailInfoForm.notifyCondition"
+                    list="{'Confirmation','Wait List','Cancellation','Event Full'}"/>                
+                
+                <s:submit cssClass="btn btn-primary"/>
+            </s:form>
+        </div>
+    </div>
         
         <!-- JS -->
         <script src="js/tether.min.js"></script>

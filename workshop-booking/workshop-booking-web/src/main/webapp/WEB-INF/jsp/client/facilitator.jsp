@@ -1,7 +1,7 @@
 <%-- 
-    Document   : attendance
-    Created on : 1-Mar-2019, 7:59:02 PM
-    Author     : dwesl
+    Document   : facilitators
+    Created on : 11-Mar-2019, 8:44:20 PM
+    Author     : sylvi
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Attendance</title>
+        <title>Facilitator</title>
         
         <!-- Bootstrap core CSS -->
         <link href="<%=request.getContextPath()%>/css/bootstrap.min.css" rel="stylesheet">
@@ -23,7 +23,7 @@
     </head>
     <body>
         <div class="jumbotron text-center banner-row mb-0">
-            <h1>Workshop Attendance</h1>
+            <h1>Workshop Facilitator</h1>
         </div>
         
         <!-- Navigation Bar - INCLUDED IN EVERY .JSP FILE -->
@@ -66,7 +66,7 @@
                         <li class="nav-item">
                             <s:url action="facilitatorLoadAction" var="facilitatorUrl" />
                             <a href='<s:property value="facilitatorUrl"/>'>Facilitators</a>
-                        </li>    
+                        </li>
                         <li class="nav-item">
                             <s:url action="emaileditLoadAction" var="emaileditUrl" />
                             <a href='<s:property value="emaileditUrl"/>'>Message Center</a>
@@ -81,7 +81,7 @@
         </div>
 
 
-        <h1>Need to add workshop attendance functionality here</h1>
+        <h1>Need to add workshop facilitator functionality here</h1>
         
     </div>
         

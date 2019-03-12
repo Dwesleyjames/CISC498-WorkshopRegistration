@@ -59,8 +59,6 @@ public class FunctionAction extends ActionSupport implements Preparable{
     public String load() throws Exception{
         try {
             System.out.println("### FunctionAction load running");
-//            System.out.println("### StudentEditAction prepare running");
-//            statusList = ejb.findstatusList();
         } 
         catch (Exception e) {
             StringWriter out = new StringWriter();

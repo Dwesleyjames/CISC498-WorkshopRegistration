@@ -124,5 +124,11 @@
             <interceptor-ref name="baseStack"></interceptor-ref>
             <result name="success">WEB-INF/jsp/client/emailedit.jsp</result>
         </action>
+        
+        <!--Facilitator Page-->
+        <action name="facilitatorLoadAction" class="ca.queensu.websvcs.workshopbooking.action.EmailEditAction" method="execute">
+            <interceptor-ref name="baseStack"></interceptor-ref>
+            <result name="success">WEB-INF/jsp/client/facilitator.jsp</result>
+        </action>
     </package>
 </struts>

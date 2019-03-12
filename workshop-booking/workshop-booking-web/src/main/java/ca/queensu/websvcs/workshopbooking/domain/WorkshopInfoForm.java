@@ -28,8 +28,8 @@ public class WorkshopInfoForm implements Serializable{
     public String getStatus() {
         return status;
     }
-    
-    public void setStatus(String Status){
+
+    public void setStatus(String status) {
         this.status = status;
     }
 
@@ -37,45 +37,91 @@ public class WorkshopInfoForm implements Serializable{
         return eventTitle;
     }
 
+    public void setEventTitle(String eventTitle) {
+        this.eventTitle = eventTitle;
+    }
+
     public String getLocation() {
         return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public String getTeaser() {
         return teaser;
     }
 
+    public void setTeaser(String teaser) {
+        this.teaser = teaser;
+    }
+
     public Integer getMaxParticipant() {
         return maxParticipant;
+    }
+
+    public void setMaxParticipant(Integer maxParticipant) {
+        this.maxParticipant = maxParticipant;
     }
 
     public Integer getWaitlistLimit() {
         return waitlistLimit;
     }
 
+    public void setWaitlistLimit(Integer waitlistLimit) {
+        this.waitlistLimit = waitlistLimit;
+    }
+
     public String getRgStDate() {
         return rgStDate;
+    }
+
+    public void setRgStDate(String rgStDate) {
+        this.rgStDate = rgStDate;
     }
 
     public String getRgStTime() {
         return rgStTime;
     }
 
+    public void setRgStTime(String rgStTime) {
+        this.rgStTime = rgStTime;
+    }
+
     public String getRgEndDate() {
         return rgEndDate;
+    }
+
+    public void setRgEndDate(String rgEndDate) {
+        this.rgEndDate = rgEndDate;
     }
 
     public String getRgEndTime() {
         return rgEndTime;
     }
 
+    public void setRgEndTime(String rgEndTime) {
+        this.rgEndTime = rgEndTime;
+    }
+
     public String getEventStDate() {
         return eventStDate;
+    }
+
+    public void setEventStDate(String eventStDate) {
+        this.eventStDate = eventStDate;
     }
 
     public String getEventStTime() {
         return eventStTime;
     }
+
+    public void setEventStTime(String eventStTime) {
+        this.eventStTime = eventStTime;
+    }
+
+
 
 
 

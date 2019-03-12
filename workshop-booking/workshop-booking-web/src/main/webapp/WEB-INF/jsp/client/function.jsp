@@ -2,6 +2,7 @@
     Document   : function
     Created on : 1-Mar-2019, 7:59:08 PM
     Author     : dwesl
+    Event Setup Page for Workshop Registration System
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -51,62 +52,80 @@
                     </li>
                 </ul>              
         </nav>
-        
-        <div class="func-navbar">
-            <ul>
-                <li class="func-nav-item">
-                    <s:url action="functionLoadAction" var="functionUrl" />
-                    <a href='<s:property value="functionUrl"/>'>Event Setup</a>
-                </li>
-                <li class="func-nav-item">
-                    <s:url action="emaileditLoadAction" var="emaileditUrl" />
-                    <a href='<s:property value="emaileditUrl"/>'>Message Center</a>
-                </li>
-                <li class="func-nav-item">
-                    <s:url action="attendanceLoadAction" var="attendanceUrl" />
-                    <a href='<s:property value="attendanceUrl"/>'>Attendance</a>
-                </li>
-            </ul>
+    
+    
+    <div class="row">
+        <!--Nav bar for Function, included in every workshop function .jsp file-->
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-header">
+                    Workshop Edit
+                </div>
+                <div class="card-body">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <s:url action="functionLoadAction" var="functionUrl" />
+                            <a href='<s:property value="functionUrl"/>'>Event Setup</a>
+                        </li>
+                        <li class="nav-item">
+                            <s:url action="facilitatorLoadAction" var="facilitatorUrl" />
+                            <a href='<s:property value="facilitatorUrl"/>'>Facilitators</a>
+                        </li>
+                        <li class="nav-item">
+                            <s:url action="emaileditLoadAction" var="emaileditUrl" />
+                            <a href='<s:property value="emaileditUrl"/>'>Message Center</a>
+                        </li>
+                        <li class="nav-item">
+                            <s:url action="attendanceLoadAction" var="attendanceUrl" />
+                            <a href='<s:property value="attendanceUrl"/>'>Attendance</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
         </div>
-        
+                        
+        <div class="col-md-9">
+            <s:form id="workshopEditForm" action="functionLoadAction" 
+                    theme="bootstrap" method="post" cssClass="form-vertical">
 
-        <s:form id="workshopEditForm" action="functionLoadAction" 
-                theme="bootstrap" method="post" cssClass="form-vertical">
+                <s:radio 
+                    label="Status:"
+                    name="workshopForm.status" 
+                    list="statusList" />
 
-            <s:radio 
-                label="Status:"
-                name="workshopForm.status" 
-                list="statusList" />
+                <s:textfield 
+                    label="Event Title:"
+                    placeholder="Event Title"
+                    name="workshopForm.eventTitle"
+                    tooltip="Enter Workshop Title Here"/>
 
-            <s:textfield 
-                label="Event Title:"
-                placeholder="Event Title"
-                name="workshopForm.eventTitle"
-                tooltip="Enter Workshop Title Here"/>
-            
-            <s:select 
-                label="Location"
-                name="workshopForm.location" 
-                list="locationList"/>
+                <s:select 
+                    label="Location"
+                    name="workshopForm.location" 
+                    list="locationList"/>
 
-            <s:textarea 
-                label="Teaser:"
-                name="workshopForm.teaser"/>
-            
-            <s:textfield 
-                label="Maximum Participants:"
-                name="workshopForm.maxParticipant"/>
+                <s:textarea 
+                    label="Teaser:"
+                    name="workshopForm.teaser"
+                    emptyOption="true"/>
+                
 
-            <s:textfield 
-                label="Wait List Limit:"
-                name="workshopForm.waitlistLimit"/>
+                <s:textfield 
+                    label="Maximum Participants:"
+                    name="workshopForm.maxParticipant"/>
 
-            <!--Todo: Working on datetimepicker-->
+                <s:textfield 
+                    label="Wait List Limit:"
+                    name="workshopForm.waitlistLimit"/>
+
+                <!--Todo: Working on datetimepicker-->
 
 
-            <s:submit cssClass="btn btn-primary"/>
-        </s:form>
-            
+                <s:submit cssClass="btn btn-primary"/>
+            </s:form>
+        </div>
+    </div>        
             
             
         <!-- JS -->

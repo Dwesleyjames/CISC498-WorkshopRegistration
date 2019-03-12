@@ -138,7 +138,15 @@
             <groupId>com.jgeppert.struts2.bootstrap</groupId>
             <artifactId>struts2-bootstrap-plugin</artifactId>
             <version>2.5.2</version>
-        </dependency>        
+        </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/org.apache.struts/struts2-dojo-plugin -->
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-dojo-plugin</artifactId>
+            <version>2.3.37</version>
+        </dependency>
+
   
     </dependencies>
 
