@@ -131,4 +131,25 @@ public class WorkshopBookingSessionBean implements WorkshopBookingSessionBeanLoc
         locationList.add("Stauffer Lib");
         return locationList;
     }
+    
+    @Override
+    public List<String> finddepartmentList(){
+//      List of all possible locations to hold a workshop
+        List<String> departmentList = new ArrayList<>();
+        departmentList.add("Choose a department");
+        departmentList.add("Arts");
+        departmentList.add("Computing");
+        departmentList.add("Engineering");
+        departmentList.add("Nursing");
+        return departmentList;
+    }
+    
+    @Override
+    public List<String> findroleList(){
+//      List of all possible locations to hold a workshop
+        List<String> roleList = new ArrayList<>();
+        roleList.add("Faculty");
+        roleList.add("Staff");
+        return roleList;
+    }
 }

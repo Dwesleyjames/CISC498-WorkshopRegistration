@@ -130,5 +130,10 @@
             <interceptor-ref name="baseStack"></interceptor-ref>
             <result name="success">WEB-INF/jsp/client/facilitator.jsp</result>
         </action>
+        
+        <action name="personalDetailAction" class="ca.queensu.websvcs.workshopbooking.action.personalDetailAction" method="execute">
+            <interceptor-ref name="baseStack"></interceptor-ref>
+            <result name="success">WEB-INF/jsp/client/personaldetail.jsp</result>
+        </action>
     </package>
 </struts>

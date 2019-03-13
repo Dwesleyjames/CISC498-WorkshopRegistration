@@ -76,7 +76,8 @@
 
             <ul>
                 <li type="button" class="btn btn-primary"> 
-                    Register
+                    <s:url action="personalDetailAction" var="personalDetailUrl" />
+                    <a href='<s:property value="personalDetailUrl"/>' style="color:white">Register</a>
                 </li>
                 <li type="button" class="btn btn-primary">
                     <s:url action="functionLoadAction" var="functionUrl" />
