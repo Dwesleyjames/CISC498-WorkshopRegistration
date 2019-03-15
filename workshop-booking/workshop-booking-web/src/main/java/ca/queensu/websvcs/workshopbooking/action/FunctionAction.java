@@ -80,6 +80,8 @@ public class FunctionAction extends ActionSupport implements Preparable{
         catch (Exception e) {
             StringWriter out = new StringWriter();
             e.printStackTrace(new PrintWriter(out));
+            
+            
             addActionError(createErrorMessage("Exception occurred while granting access to the application. Please contact the Archetype Client for assistance."));
             log.error("***************Exception occurred in execute method " + e.getMessage());
             log.error(out);
