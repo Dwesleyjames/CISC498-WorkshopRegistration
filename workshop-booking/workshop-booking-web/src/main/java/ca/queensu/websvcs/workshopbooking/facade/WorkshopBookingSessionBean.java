@@ -8,6 +8,9 @@ import javax.ejb.Local;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -18,6 +21,9 @@ import org.apache.logging.log4j.Logger;
 public class WorkshopBookingSessionBean implements WorkshopBookingSessionBeanLocal {
 
     private final Logger log = LogManager.getLogger(WorkshopBookingSessionBean.class);
+    
+    @PersistenceContext(unitName = "WorkshopBooking-WebPU")
+    private EntityManager em;
 
     @Override
     public List<StudentDataBean> findStudentList() {
