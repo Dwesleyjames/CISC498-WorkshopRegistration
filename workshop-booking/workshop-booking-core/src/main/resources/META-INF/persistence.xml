@@ -5,6 +5,9 @@
     <jta-data-source>jdbc/workshopbookingDS</jta-data-source>
     <class>ca.queensu.websvcs.workshopbooking.archetype.core.entity.Detail</class>
     <class>ca.queensu.websvcs.workshopbooking.archetype.core.entity.Person</class>
+    <class>ca.queensu.websvcs.workshopbooking.core.entity.Departments</class>
+    <class>ca.queensu.websvcs.workshopbooking.core.entity.Roles</class>
+    <class>ca.queensu.websvcs.workshopbooking.core.entity.Person</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <validation-mode>NONE</validation-mode>
     <properties>

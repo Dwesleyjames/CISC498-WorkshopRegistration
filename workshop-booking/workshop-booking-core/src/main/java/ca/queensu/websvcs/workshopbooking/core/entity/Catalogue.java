@@ -35,7 +35,8 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Catalogue.findByTitle", query = "SELECT c FROM Catalogue c WHERE c.title = :title")
     , @NamedQuery(name = "Catalogue.findByDetails", query = "SELECT c FROM Catalogue c WHERE c.details = :details")
     , @NamedQuery(name = "Catalogue.findByLocation", query = "SELECT c FROM Catalogue c WHERE c.location = :location")
-    , @NamedQuery(name = "Catalogue.findByStartTime", query = "SELECT c FROM Catalogue c WHERE c.startTime = :startTime")})
+    , @NamedQuery(name = "Catalogue.findByStartTime", query = "SELECT c FROM Catalogue c WHERE c.startTime = :startTime")
+    , @NamedQuery(name = "Catalogue.findByEndTime", query = "SELECT c FROM Catalogue c WHERE c.endTime = :endTime")})
 public class Catalogue implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -52,14 +53,17 @@ public class Catalogue implements Serializable {
     @Column(name = "start_time")
     @Temporal(TemporalType.TIMESTAMP)
     private Date startTime;
+    @Column(name = "end_time")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date endTime;
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "catalogue")
     private Registrations registrations;
     @JoinColumn(name = "department_id", referencedColumnName = "department_id")
     @ManyToOne
     private Departments departmentId;
-    @JoinColumn(name = "host_id", referencedColumnName = "net_id")
+    @JoinColumn(name = "workshop_host_id", referencedColumnName = "net_id")
     @ManyToOne
-    private Person hostId;
+    private Person workshopHostId;
 
     public Catalogue() {
     }
@@ -108,6 +112,14 @@ public class Catalogue implements Serializable {
         this.startTime = startTime;
     }
 
+    public Date getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(Date endTime) {
+        this.endTime = endTime;
+    }
+
     public Registrations getRegistrations() {
         return registrations;
     }
@@ -124,12 +136,12 @@ public class Catalogue implements Serializable {
         this.departmentId = departmentId;
     }
 
-    public Person getHostId() {
-        return hostId;
+    public Person getWorkshopHostId() {
+        return workshopHostId;
     }
 
-    public void setHostId(Person hostId) {
-        this.hostId = hostId;
+    public void setWorkshopHostId(Person workshopHostId) {
+        this.workshopHostId = workshopHostId;
     }
 
     @Override

@@ -6,17 +6,19 @@
 package ca.queensu.websvcs.workshopbooking.core.entity;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedNativeQuery;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
@@ -30,10 +32,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Person.findByNetId", query = "SELECT p FROM Person p WHERE p.netId = :netId")
     , @NamedQuery(name = "Person.findByEmplId", query = "SELECT p FROM Person p WHERE p.emplId = :emplId")
     , @NamedQuery(name = "Person.findByCommonName", query = "SELECT p FROM Person p WHERE p.commonName = :commonName")
-    , @NamedQuery(name = "Person.findByEmail", query = "SELECT p FROM Person p WHERE p.email = :email")
-})
-@NamedNativeQuery(name = "Person.countAll", query = "SELECT COUNT(*) AS total FROM PERSON")
-
+    , @NamedQuery(name = "Person.findByEmail", query = "SELECT p FROM Person p WHERE p.email = :email")})
 public class Person implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -47,28 +46,22 @@ public class Person implements Serializable {
     private String commonName;
     @Column(name = "email")
     private String email;
+    @OneToMany(mappedBy = "netId")
+    private Collection<Registrations> registrationsCollection;
     @JoinColumn(name = "department_id", referencedColumnName = "department_id")
     @ManyToOne
     private Departments departmentId;
     @JoinColumn(name = "role_id", referencedColumnName = "role_id")
     @ManyToOne
     private Roles roleId;
-    
+    @OneToMany(mappedBy = "workshopHostId")
+    private Collection<Catalogue> catalogueCollection;
 
     public Person() {
     }
 
     public Person(String netId) {
         this.netId = netId;
-    }
-    
-    public Person(String netId, Integer emplId, String commonName, String email, Departments departmentId, Roles roleId) {
-        this.netId = netId;
-        this.emplId = emplId;
-        this.commonName = commonName;
-        this.email = email;
-        this.departmentId = departmentId;
-        this.roleId = roleId;
     }
 
     public String getNetId() {
@@ -103,6 +96,15 @@ public class Person implements Serializable {
         this.email = email;
     }
 
+    @XmlTransient
+    public Collection<Registrations> getRegistrationsCollection() {
+        return registrationsCollection;
+    }
+
+    public void setRegistrationsCollection(Collection<Registrations> registrationsCollection) {
+        this.registrationsCollection = registrationsCollection;
+    }
+
     public Departments getDepartmentId() {
         return departmentId;
     }
@@ -117,6 +119,15 @@ public class Person implements Serializable {
 
     public void setRoleId(Roles roleId) {
         this.roleId = roleId;
+    }
+
+    @XmlTransient
+    public Collection<Catalogue> getCatalogueCollection() {
+        return catalogueCollection;
+    }
+
+    public void setCatalogueCollection(Collection<Catalogue> catalogueCollection) {
+        this.catalogueCollection = catalogueCollection;
     }
 
     @Override

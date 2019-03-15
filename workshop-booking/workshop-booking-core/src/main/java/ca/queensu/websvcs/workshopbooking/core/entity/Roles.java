@@ -95,7 +95,7 @@ public class Roles implements Serializable {
 
     @Override
     public String toString() {
-        return "Role ID: " + roleId;
+        return "ca.queensu.websvcs.workshopbooking.core.entity.Roles[ roleId=" + roleId + " ]";
     }
     
 }
